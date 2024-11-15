@@ -3,25 +3,32 @@ public class ArrayAverageScore12 {
     public static void main(String[] args) {
         Scanner input12 = new Scanner(System.in);
 
+        System.out.print("Enter the number of students: ");
+        int numberStudents = input12.nextInt();
+
         //declaration variable
-        int[] score = new int[10];
-        int passedStudent = 0;
-        double total = 0;
-        double average;
+        int[] score = new int[numberStudents];
+        int passedStudent = 0, failedStudents = 0;
+        double totalPassed = 0, totalFailed = 0;
+        double averagePassed = 0, averageFailed = 0;
 
         //looping
-        for (int i = 0; i < score.length; i++){
-            System.out.print("The student score " + (i + 1) + ": ");
+        for (int i = 0; i < numberStudents; i++){
+            System.out.print("Enter the final score " + (i) + ": ");
             score[i] = input12.nextInt();
             if(score[i] >= 70) {
                 passedStudent++;
+                totalPassed += score[i];
+        } else { 
+            failedStudents++;
+            totalFailed += score[i];
         }
     }
-        for (int i = 0; i < score.length; i++){
-            total+= score[i];
-        }
-        average = total / score.length;
-        System.out.println("The class average score is " + average);
-        System.out.println("The number of student who passed is "+passedStudent);
+       //calculate average
+        averagePassed = totalPassed / passedStudent;
+        System.out.println("The average score of students who passed is " + averagePassed);
+
+        averageFailed = totalFailed / failedStudents;
+        System.out.println("The average score of students who failed is "+averageFailed);
     }
 }
