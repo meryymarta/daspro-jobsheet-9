@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class ArrayNumbers12 {
     public static void main(String[] args) {
-        int[] num = new int[4];
-        num[0] = 5;
-        num[1] = 12;
-        num[2] = 7;
-        num[3] = 20;
+        double[] num = new double[4];
+        num[0] = 5.0;
+        num[1] = 12876;
+        num[2] = 7.5;
+        num[3] = 200000;
 
         System.out.println(num[0]);
         System.out.println(num[1]);
